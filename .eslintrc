@@ -1,0 +1,191 @@
+{
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "extends": [
+    "react-app",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "prettier/react",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "jsx": true
+  },
+  "ignorePatterns": [
+    "**/static/scripts/**",
+  ],
+  "plugins": [
+    "react",
+    "jest",
+    "cypress"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.8"
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": [
+        "**/index.{ts,tsx}"
+      ],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    }
+  ],
+  "env": {
+    "jest/globals": true
+  },
+  "globals": {
+    "globalThis": true
+  },
+  "rules": {
+    "import/no-dynamic-require": "off",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/cucumber*.js",
+          "**/test/**/*",
+          "**/cypress/**/*",
+          "**/__tests__/**/*",
+          "**/jest.*",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "**/setupTests.ts",
+          "**/*.spec.*",
+          "**/*.sd.*",
+          "**/*.stories.*",
+          "**/stories/*",
+          "**/storybook/*"
+        ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "json": "always",
+        "svg": "always",
+        "actions": "always",
+        "epics": "always",
+        "service": "always",
+        "provider": "always",
+        "mock": "always",
+        "mocks": "always",
+        "model": "always",
+        "helpers": "always",
+        "selectors": "always",
+        "reducer": "always",
+        "constants": "always",
+        "po": "always",
+        "sd": "always"
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "assert": "either"
+      }
+    ],
+    "jsx-a11y/label-has-for": "off",
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "info"
+        ]
+      }
+    ],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-restricted-globals": [
+      "error",
+      {
+        "name": "global",
+        "message": "Use of 'global' variable is FORBIDDEN.\n Use 'withClientGlobals' HOC for React components or 'window-or-global' package for JS modules instead"
+      }
+    ],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".tsx",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "prop": false
+      }
+    ],
+    "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "semi": [
+      "error",
+      "never",
+      {
+        "beforeStatementContinuationChars": "never"
+      }
+    ],
+    "no-unused-vars": "off",
+    "import/prefer-default-export": "warn",
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "typescript",
+        "usePrettierrc": true
+      }
+    ]
+  }
+}
