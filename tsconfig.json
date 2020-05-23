@@ -19,5 +19,5 @@
     "exclude": ["cypress"]
   },
   "exclude": ["node_modules", "dist", "reports"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["react-app-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
